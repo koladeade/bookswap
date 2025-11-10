@@ -12,7 +12,9 @@ A Flutter app for students to swap books, manage listings, chat, and track swap 
 
 5. Real-time message chat linked to swaps
 
+# Folder Structure
 
+```
 bookswap/
 ├── ios/
 ├── lib/
@@ -39,7 +41,7 @@ bookswap/
 ├── pubspec.yaml
 ├── .gitignore
 ├── README.md
-
+```
 
 # Setup Instructions
 1. Clone repo
