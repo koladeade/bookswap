@@ -7,6 +7,7 @@ import 'book_form_screen.dart';
 import 'chat_screen.dart';
 
 class MyListingsScreen extends StatefulWidget {
+  const MyListingsScreen({super.key});
   @override
   State<MyListingsScreen> createState() => _MyListingsScreenState();
 }

@@ -4,7 +4,7 @@ class SwapButton extends StatelessWidget {
   final VoidCallback onPressed;
   final String status; // Pending, Accepted, Rejected, or empty
 
-  SwapButton({required this.onPressed, required this.status});
+  const SwapButton({super.key, required this.onPressed, required this.status});
 
   @override
   Widget build(BuildContext context) {

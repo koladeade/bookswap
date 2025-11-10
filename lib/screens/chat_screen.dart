@@ -6,7 +6,7 @@ import '../providers/auth_provider.dart';
 class ChatScreen extends StatefulWidget {
   final String chatId;
 
-  ChatScreen({required this.chatId});
+  const ChatScreen({super.key, required this.chatId});
 
   @override
   State<ChatScreen> createState() => _ChatScreenState();

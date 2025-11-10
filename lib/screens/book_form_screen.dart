@@ -4,12 +4,13 @@ import '../providers/books_provider.dart';
 import '../providers/auth_provider.dart';
 import '../models/book.dart';
 
+@immutable
 class BookFormScreen extends StatefulWidget {
   final Book? editBook;
-  BookFormScreen({this.editBook});
+  const BookFormScreen({super.key, this.editBook});
 
   @override
-  _BookFormScreenState createState() => _BookFormScreenState();
+  State<BookFormScreen> createState() => _BookFormScreenState();
 }
 
 class _BookFormScreenState extends State<BookFormScreen> {

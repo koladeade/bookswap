@@ -7,6 +7,7 @@ import 'settings_screen.dart';
 // Use BottomNavigationBar to persist navigation & always show appbar on all screens.
 
 class MainAppScreen extends StatefulWidget {
+  const MainAppScreen({super.key});
   @override
   State<MainAppScreen> createState() => _MainAppScreenState();
 }

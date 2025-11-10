@@ -25,6 +25,7 @@ void main() async {
 }
 
 class BookSwapRootApp extends StatelessWidget {
+  const BookSwapRootApp({super.key});
   @override
   Widget build(BuildContext context) {
     final auth = Provider.of<AuthProvider>(context);
@@ -40,7 +41,7 @@ class BookSwapRootApp extends StatelessWidget {
         colorScheme: ColorScheme.dark(
           primary: Color(0xFFFFD600),
           secondary: Colors.yellow.shade700,
-          background: Color(0xFF121329),
+          surface: Color(0xFF121329),
         ),
         appBarTheme: AppBarTheme(
           backgroundColor: Color(0xFF191A32),

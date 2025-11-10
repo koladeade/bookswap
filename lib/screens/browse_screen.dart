@@ -6,6 +6,7 @@ import '../providers/swap_provider.dart';
 import '../models/swap.dart';
 
 class BrowseScreen extends StatefulWidget {
+  const BrowseScreen({super.key});
   @override
   State<BrowseScreen> createState() => _BrowseScreenState();
 }
