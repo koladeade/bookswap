@@ -1,16 +1,68 @@
-# bookswap
+# BookSwap
+A Flutter app for students to swap books, manage listings, chat, and track swap offers in real time via Firebase.
 
-A new Flutter project.
+# Features
+1. Sign up, login, logout (Firebase Auth)
 
-## Getting Started
+2. Post, edit, and delete books
 
-This project is a starting point for a Flutter application.
+3. Initiate swap offers with Pending/Accepted/Rejected state
 
-A few resources to get you started if this is your first Flutter project:
+4. See swaps you requested and offers for your books
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+5. Real-time message chat linked to swaps
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+
+Architecture
+text
+lib/
+├── models/      # Book, Swap data classes
+├── providers/   # AuthProvider, BooksProvider, SwapProvider (state management)
+├── screens/     # UI screens (Browse, Listings, Settings, Chat, Auth, etc.)
+├── widgets/     # Reusable widgets/components
+└── main.dart    # App entry point
+Data flow: UI → Providers ↔ Firebase (Firestore/Auth)
+
+# Setup Instructions
+1. Clone repo
+  - git clone https://github.com/yourusername/bookswap.git
+  - cd bookswap
+  - Install dependencies (flutter pub get)
+  - Add Firebase config files
+  - Place GoogleService-Info.plist (iOS) in ios/Runner/
+
+2. Set up Firebase
+
+3. In the Firebase console: enable Email/Password Auth and Firestore Database
+
+4. Run the app
+  - flutter run
+  - Build & Run
+  - flutter pub get
+  - flutter run
+
+5. Sensitive Files & .gitignore
+  - Sensitive config files are excluded in .gitignore:
+
+text
+.dart_tool/
+android/app/google-services.json
+ios/Runner/GoogleService-Info.plist
+.env
+firebase.json
+build/
+.idea/
+Code Quality
+Dart analyzer reports zero warnings with:
+
+text
+flutter analyze
+Architecture Diagram
+text
+[User UI]
+   ↓↑
+[Flutter Widgets]
+   ↓↑ (Provider)
+[Books/Auth/Swap Providers]
+   ↓↑
+[Firebase (Firestore, Auth)]
