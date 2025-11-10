@@ -1,7 +1,7 @@
-#BookSwap
+# BookSwap
 A Flutter app for students to swap books, manage listings, chat, and track swap offers in real time via Firebase.
 
-#Features
+# Features
 1. Sign up, login, logout (Firebase Auth)
 
 2. Post, edit, and delete books
@@ -23,7 +23,7 @@ lib/
 └── main.dart    # App entry point
 Data flow: UI → Providers ↔ Firebase (Firestore/Auth)
 
-#Setup Instructions
+# Setup Instructions
 1. Clone repo
   - git clone https://github.com/yourusername/bookswap.git
   - cd bookswap
@@ -57,7 +57,6 @@ Dart analyzer reports zero warnings with:
 
 text
 flutter analyze
-# No issues found!
 Architecture Diagram
 text
 [User UI]
