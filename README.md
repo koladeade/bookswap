@@ -12,16 +12,36 @@ A Flutter app for students to swap books, manage listings, chat, and track swap 
 
 5. Real-time message chat linked to swaps
 
+# Folder Structure
 
-Architecture
-text
-lib/
-├── models/      # Book, Swap data classes
-├── providers/   # AuthProvider, BooksProvider, SwapProvider (state management)
-├── screens/     # UI screens (Browse, Listings, Settings, Chat, Auth, etc.)
-├── widgets/     # Reusable widgets/components
-└── main.dart    # App entry point
-Data flow: UI → Providers ↔ Firebase (Firestore/Auth)
+```
+bookswap/
+├── ios/
+├── lib/
+├── firebase_options.dart
+├── main.dart
+├── models
+│   ├── book.dart
+│   └── swap.dart
+├── providers
+│   ├── auth_provider.dart
+│   ├── books_provider.dart
+│   └── swap_provider.dart
+├── screens
+│   ├── auth_screen.dart
+│   ├── book_form_screen.dart
+│   ├── browse_screen.dart
+│   ├── chat_screen.dart
+│   ├── email_verify_screen.dart
+│   ├── main_app_screen.dart
+│   ├── my_listings_screen.dart
+│   └── settings_screen.dart
+└── widgets
+    └── swap_button.dart
+├── pubspec.yaml
+├── .gitignore
+├── README.md
+```
 
 # Setup Instructions
 1. Clone repo
@@ -41,28 +61,11 @@ Data flow: UI → Providers ↔ Firebase (Firestore/Auth)
   - flutter pub get
   - flutter run
 
-5. Sensitive Files & .gitignore
-  - Sensitive config files are excluded in .gitignore:
+# Prerequisites
+finEnsure the following are installed:
+- [Flutter SDK](https://docs.flutter.dev/get-started/install)
+- [Xcode (for iOS)](https://developer.apple.com/xcode/)
+- [Android Studio or SDK tools](https://developer.android.com/studio)
+- [Firebase CLI](https://firebase.google.com/docs/cli)
 
-text
-.dart_tool/
-android/app/google-services.json
-ios/Runner/GoogleService-Info.plist
-.env
-firebase.json
-build/
-.idea/
-Code Quality
-Dart analyzer reports zero warnings with:
 
-text
-flutter analyze
-Architecture Diagram
-text
-[User UI]
-   ↓↑
-[Flutter Widgets]
-   ↓↑ (Provider)
-[Books/Auth/Swap Providers]
-   ↓↑
-[Firebase (Firestore, Auth)]
