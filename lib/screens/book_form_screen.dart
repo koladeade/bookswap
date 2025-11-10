@@ -67,7 +67,7 @@ class _BookFormScreenState extends State<BookFormScreen> {
             ),
             SizedBox(height: 12),
             DropdownButtonFormField<String>(
-              value: condition,
+              initialValue: condition,
               items: [
                 'New',
                 'Like New',

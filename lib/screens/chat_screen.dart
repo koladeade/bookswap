@@ -41,8 +41,9 @@ class _ChatScreenState extends State<ChatScreen> {
                     .orderBy('timestamp', descending: true)
                     .snapshots(),
                 builder: (context, snapshot) {
-                  if (!snapshot.hasData)
+                  if (!snapshot.hasData) {
                     return Center(child: CircularProgressIndicator());
+                  }
                   final messages = snapshot.data!.docs;
                   return ListView.builder(
                     reverse: true,

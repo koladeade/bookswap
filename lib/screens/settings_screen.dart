@@ -94,7 +94,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     Switch(
                       value: pushNotifications,
-                      activeColor: Color(0xFFFFD600),
+                      activeThumbColor: Color(0xFFFFD600),
                       onChanged: (val) {
                         setState(() {
                           pushNotifications = val;
@@ -126,7 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                     Switch(
                       value: emailNotifications,
-                      activeColor: Color(0xFFFFD600),
+                      activeThumbColor: Color(0xFFFFD600),
                       onChanged: (val) {
                         setState(() {
                           emailNotifications = val;

@@ -23,7 +23,7 @@ class _AuthScreenState extends State<AuthScreen> {
     return Scaffold(
       backgroundColor: Color(0xFF121329),
       body: Center(
-        child: Container(
+        child: SizedBox(
           width: 350,
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
