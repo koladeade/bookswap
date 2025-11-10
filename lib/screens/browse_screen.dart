@@ -3,7 +3,6 @@ import 'package:provider/provider.dart';
 import '../providers/books_provider.dart';
 import '../providers/auth_provider.dart';
 import '../providers/swap_provider.dart';
-import '../models/book.dart';
 import '../models/swap.dart';
 
 class BrowseScreen extends StatefulWidget {
@@ -126,10 +125,10 @@ class _BrowseScreenState extends State<BrowseScreen> {
                 ? null
                 : ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: MaterialStateProperty.all(
+                      backgroundColor: WidgetStatePropertyAll(
                         Color(0xFFFFD600),
                       ),
-                      foregroundColor: MaterialStateProperty.all(Colors.black),
+                      foregroundColor: WidgetStatePropertyAll(Colors.black),
                     ),
                     onPressed: () async {
                       // Prevent requesting swap on your own book!

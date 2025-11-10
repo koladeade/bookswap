@@ -91,10 +91,8 @@ class _AuthScreenState extends State<AuthScreen> {
                 width: double.infinity,
                 child: ElevatedButton(
                   style: ButtonStyle(
-                    backgroundColor: MaterialStateProperty.all(
-                      Color(0xFFFFD600),
-                    ),
-                    foregroundColor: MaterialStateProperty.all(Colors.black),
+                    backgroundColor: WidgetStatePropertyAll(Color(0xFFFFD600)),
+                    foregroundColor: WidgetStatePropertyAll(Colors.black),
                   ),
                   onPressed: auth.isLoading
                       ? null

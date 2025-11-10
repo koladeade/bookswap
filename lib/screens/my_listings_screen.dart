@@ -3,8 +3,6 @@ import 'package:provider/provider.dart';
 import '../providers/books_provider.dart';
 import '../providers/auth_provider.dart';
 import '../providers/swap_provider.dart';
-import '../models/book.dart';
-import '../models/swap.dart';
 import 'book_form_screen.dart';
 import 'chat_screen.dart';
 
@@ -44,8 +42,8 @@ class _MyListingsScreenState extends State<MyListingsScreen> {
           width: double.infinity,
           child: ElevatedButton.icon(
             style: ButtonStyle(
-              backgroundColor: MaterialStateProperty.all(Color(0xFFFFD600)),
-              foregroundColor: MaterialStateProperty.all(Colors.black),
+              backgroundColor: WidgetStatePropertyAll(Color(0xFFFFD600)),
+              foregroundColor: WidgetStatePropertyAll(Colors.black),
             ),
             icon: Icon(Icons.add),
             label: Text('Post a Book'),
