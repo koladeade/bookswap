@@ -172,7 +172,7 @@ class _MyListingsScreenState extends State<MyListingsScreen> {
 
         SizedBox(height: 20),
         Text(
-          "Swap Offers I've Sent",
+          "My Offers Sent",
           style: TextStyle(
             color: Colors.white,
             fontSize: 18,
