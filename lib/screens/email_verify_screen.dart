@@ -3,6 +3,8 @@ import 'package:provider/provider.dart';
 import '../providers/auth_provider.dart';
 
 class EmailVerifyScreen extends StatefulWidget {
+  const EmailVerifyScreen({super.key});
+
   @override
   State<EmailVerifyScreen> createState() => _EmailVerifyScreenState();
 }
