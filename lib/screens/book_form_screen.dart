@@ -105,9 +105,14 @@ class _BookFormScreenState extends State<BookFormScreen> {
                 ),
                 child: Text(widget.editBook == null ? 'Post' : 'Save Changes'),
                 onPressed: () async {
+                  // Save context-dependent values early
+                  final messenger = ScaffoldMessenger.of(context);
+                  final navigator = Navigator.of(context);
+                  final userId = auth.user?.uid ?? '';
+
                   if (titleController.text.isEmpty ||
                       authorController.text.isEmpty) {
-                    ScaffoldMessenger.of(context).showSnackBar(
+                    messenger.showSnackBar(
                       SnackBar(content: Text('Title and Author required')),
                     );
                     return;
@@ -119,7 +124,7 @@ class _BookFormScreenState extends State<BookFormScreen> {
                       author: authorController.text,
                       condition: condition,
                       imageUrl: imageUrl,
-                      ownerId: auth.user!.uid,
+                      ownerId: userId,
                     );
                     await booksProvider.addBook(book);
                   } else {
@@ -129,11 +134,12 @@ class _BookFormScreenState extends State<BookFormScreen> {
                       author: authorController.text,
                       condition: condition,
                       imageUrl: imageUrl,
-                      ownerId: auth.user!.uid,
+                      ownerId: userId,
                     );
                     await booksProvider.updateBook(edited);
                   }
-                  Navigator.of(context).pop();
+                  if (!mounted) return;
+                  navigator.pop();
                 },
               ),
             ),

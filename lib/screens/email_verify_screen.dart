@@ -40,10 +40,12 @@ class _EmailVerifyScreenState extends State<EmailVerifyScreen> {
               onPressed: resendLoading
                   ? null
                   : () async {
+                      final messenger = ScaffoldMessenger.of(context);
                       setState(() => resendLoading = true);
                       await auth.resendVerification();
+                      if (!mounted) return;
                       setState(() => resendLoading = false);
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      messenger.showSnackBar(
                         SnackBar(content: Text('Verification email resent!')),
                       );
                     },

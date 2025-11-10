@@ -132,9 +132,11 @@ class _BrowseScreenState extends State<BrowseScreen> {
                       foregroundColor: WidgetStatePropertyAll(Colors.black),
                     ),
                     onPressed: () async {
-                      // Prevent requesting swap on your own book!
-                      if (book.ownerId == auth.user?.uid) {
-                        ScaffoldMessenger.of(context).showSnackBar(
+                      final isMine = book.ownerId == auth.user?.uid;
+                      final messenger = ScaffoldMessenger.of(context);
+                      final userId = auth.user?.uid;
+                      if (isMine) {
+                        messenger.showSnackBar(
                           SnackBar(content: Text('Cannot swap your own book!')),
                         );
                         return;
@@ -143,12 +145,13 @@ class _BrowseScreenState extends State<BrowseScreen> {
                         Swap(
                           id: '',
                           bookId: book.id,
-                          senderId: auth.user!.uid,
+                          senderId: userId!,
                           recipientId: book.ownerId,
                           status: 'Pending',
                         ),
                       );
-                      ScaffoldMessenger.of(context).showSnackBar(
+                      if (!mounted) return;
+                      messenger.showSnackBar(
                         SnackBar(content: Text('Swap requested!')),
                       );
                     },
