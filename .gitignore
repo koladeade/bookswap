@@ -47,3 +47,4 @@ app.*.map.json
 # Firebase config files (critical!)
 ios/Runner/GoogleService-Info.plist
 .env
+lib/firebase_options.dart
